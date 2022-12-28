@@ -3,17 +3,12 @@ let forms=[
         {name: "sarah", grade:120}
     ];
 
-
-// console.log(process.argv)
-/////////////////////////////////////////////////////////////////
 function addForm(name,grade)
 {
     forms.push({name:name, grade:grade});
     console.log(forms);
 }
-// function listForm(){
-//     console.log(forms)
-// }
+
 
 function replace(grade, id){
     forms[id].grade =grade;
@@ -50,5 +45,4 @@ else if(process.argv[2]=="sum"){
     sum();
 }
 
-/////////////////////////////////////////////////////////////////////
 
