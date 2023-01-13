@@ -1,0 +1,5 @@
+const fs= require('fs')
+let productDB=fs.readFileSync("productDB.js",'utf-8')
+
+console.log(JSON.parse(productDB))
+///////////////////////////////////////////////////////////////////////////////
