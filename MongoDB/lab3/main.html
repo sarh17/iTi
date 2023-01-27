@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Products List</h1>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"><i class="bi bi-plus"></i>Add New Product</button>
+    <br>
+    <br>
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+              <form action="http://localhost:8000/product/add" method="POST" class="m-3" >
+                  <div class="mb-4">
+                      <label for="recipient-name" class="col-form-label">ID:</label>
+                      <input type="text" class="form-control" id="id" name="id">
+                    </div>
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Price:</label>
+                        <input type="text" class="form-control" id="price" name="price">
+                    </div>
+                    <div class="mb-4">
+                        <label for="recipient-name" class="col-form-label">Quantity:</label>
+                        <input type="text" class="form-control" id="quantity" name="quantity">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Pubish</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped">
+          <thead>
+              <tr> 
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>R.O.L</th>
+                  <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr>
+                    
+                </tr>
+                
+            </tbody>
+            
+            
+        </table>
+        
+        
+        
+        <script src="/dist/js/bootstrap.bundle.js"></script>
+        <script>
+            var x = document.getElementById("table-body")
+        
+            
+        async function getData(){
+            let data = await fetch('http://localhost:8000/product/get')
+            let res = await data.json()
+            console.log(res)
+            for(let item=0; item<res.length;item++ ){
+                
+                x.innerHTML+= `<tr>
+            <td>${res[item]._id} </td>
+            <td> ${res[item].name} </td>
+            <td> ${res[item].price} </td>
+            <td>${res[item].quantity}</td>
+            <td>${10}</td>
+            <td>
+                <i type='button' class='bi bi-pencil-square' data-bs-toggle='modal' data-bs-target='#id${res[item]._id}' data-bs-whatever='@fat'></i>  <div class="modal fade " id="id${res[item]._id}" tabindex="-1" aria-labelledby="id${res[item]._id}Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="id${res[item]._id}Label">Edit Product</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                    </div>
+                                    <form action='http://localhost:8000/product/update/${res[item]._id}?_method=patch' method="POST" class="m-3">
+                                        
+                                        <div class="mb-4">
+                                            <label for="recipient-name" class="col-form-label">Name:</label>
+                                            <input type="text" class="form-control" id="name" name="name" value="${res[item].name}">
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="recipient-name" class="col-form-label">Price:</label>
+                                                <input type="text" class="form-control" id="price" name="price" value="${res[item].price}">
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for="recipient-name" class="col-form-label">Quantity:</label>
+                                                    <input type="text" class="form-control" id="quantity" name="quantity" value="${res[item].quantity}">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                        </form>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                        <form class="d-inline" action="http://localhost:8000/product/delete/${res[item]._id}?_method=DELETE" method="POST">
+                                                      <button type="submit"> <i class='bi bi-trash3 text-danger'></i>
+                                                      </button>
+                                                        </form>
+
+                                                        </td>
+                                                        </tr>`
+            }
+
+        }
+      
+        getData()
+
+    </script>
+</body>
+</html>
+
+
