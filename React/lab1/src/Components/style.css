@@ -1,0 +1,18 @@
+
+.About-me{
+    /* padding: 1rem; */
+    margin-top: 5rem;
+
+}
+
+
+img{
+    margin: 3rem;
+    width: 300px;
+    border-radius: 50%;
+ box-shadow: 5px 5px 15px;
+}
+.hello h3{
+    font-size: 60px;
+}
+
