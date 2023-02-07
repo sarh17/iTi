@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:  rgb(16, 166, 172);
+    font-size: 16px;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 10%;
+    
+}
+
+aside{
+    width: 30%; 
+}
+aside li{
+    list-style: none;
+    margin: 0.9rem;
+    justify-content: space-between;
+    
+}
+
+.logo{
+ width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-top: 0.5rem;   
+}
+
+.taste-list span{
+    
+    color: var(--main-color);
+}
+.taste-list span:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}
+.icon{
+    font-size: larger;
+    justify-items: left;
+
+}
+  h3{
+    
+    border-bottom:1px dashed black;
+}
+.twitter span {
+    color: rgb(74, 223, 228);
+}
+
+
+.join{
+    background-color: white;
+    border:2px grey solid;
+    font-weight: bold;
+    padding: .25rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: var(--main-color);
+    transition: 0.2s ease-in-out;
+
+}
+.join:hover{
+    background-color: var(--main-color);
+    color: #FFF;
+
+}
+
+#bird{
+    font-size: 1.5rem;
+    vertical-align: middle;
+    color: var(--main-color);
+}
+.join:hover #bird {
+    color: #FFF;
+}
+.join:hover span{
+    color: white;
+}
+#facebook{
+    font-size: 1.5rem;
+    vertical-align: middle;
+    color: var(--main-c);
+}
+#facebook:hover{
+    font-size: 1.5rem;
+    vertical-align: middle;
+    color: #FFF;
+}
+::content{
+    width: 60%;
+}
+.kit{
+    width: 100%;
+     height: 19rem;
+     margin-top: 0.5rem;
+}
+
+.cont {
+    display: flex;
+    flex: content;
+    list-style-type: none;
+  
+}
+.cont li{
+    font-size: 0.7rem;
+    background-color: var(--main-color);
+    padding: 1rem; 
+    margin: 0;
+    border-left: 1px solid grey ; 
+    width: 100%;
+    margin-bottom: 0.7rem;
+    color:rgb(17, 98, 109) ;
+}
+
+.mail-a{
+    display: flex;
+    font-size: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+
+}
+#mail1{
+    font-weight: bolder;
+}
+
+.pics{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#pics-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pics img{
+    width: 20rem;
+    padding: 1rem;
+
+}
+.pics h1{
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.pics p{
+    font-size: 0.7rem;
+    padding: 0.5rem;
+
+}
+.txt{
+    font-style: italic;
+    
+
+}
+.txt span{
+    color: var(--main-color);
+}
+footer{
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    border-top:0.1rem dashed grey;
+    width: 80%;
+    margin: 0 auto;
+} 
+
+.privacy h5{
+    color: var(--main-color);
+}
+.privacy p{
+    font-style:  oblique;
+    font-size: 0.8rem;
+    color:rgba(107, 107, 107, 0.856);
+}
+.icons{
+    font-size: 1.5rem;
+    color: rgb(107, 107, 107);
+    
+}
+
+
+@media (max-width:1000px){
+      .cont p{
+          display: none;
+      }
+      #pics-content{
+        flex-direction: column;
+
+      }
+
+}
+
+@media (max-width: 850px) {
+    .container{
+        flex-direction: column;
+    }
+    .logo{
+        flex-direction: column ;
+    
+    }
+    .aside{
+        display: flex;
+        flex-direction: row;
+       width: 100%;
+       align-items: center;
+
+    }
+    .aside span{
+        width: 1rem;
+        font-size: 00.8rem; 
+    }
+    .taste-list{
+        display: flex;
+        flex-direction: row;
+        width: 35rem;
+
+        
+    }
+
+    .twitter{
+        display: none;
+    }
+}
+
+@media (max-width: 650px){
+    .taste-list{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        
+    }
+    content {
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    
+}
+@media (max-width:620px) {
+    .aside{
+     flex-direction: column-reverse;
+    }
+    .icon{
+        display: none;
+    }
+    .container{
+        width: 100%;
+    }
+}
+
