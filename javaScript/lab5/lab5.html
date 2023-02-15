@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1-Make div has class, id, and name and use 
+        5 ways to select this div.  -->
+        
+<div id="dr" class="hp" name="sarah">
+    "iti dom "
+</div> 
+
+    <img onmouseover="setNewImage(this)" onmouseleave="setoldimage(this)"  src="1.jpg" width="64px"/>
+    <img onmouseover="setNewImage(this)" onmouseleave="setoldimage(this)"  src="2.jpg" width="64px"/>
+    <img onmouseover="setNewImage(this)" onmouseleave="setoldimage(this)"  src="3.png" width="64px"/>
+    <hr/>
+    <button  onclick="createDiv(this)">create</button>
+    <hr/>
+    <h1>registration form</h1>
+    <form name="registration">
+    <!-- <ul>    
+        <li><label for="fullname">Full Name</label></li>
+        <li><input type="text" name="full name"/></li>
+        <li><label for="fullname">Full Name</label></li>
+        <li><input type="text" name="full name"/></li>
+        <li><label for="fullname">Full Name</label></li>
+        <li><input type="text" name="full name"/></li>
+        <li><label for="fullname">Full Name</label></li>
+        <li><input type="text" name="full name"/></li>
+    </ul> -->
+    <label for="fullname" >Full Name</label>
+    <input type="text" id ="fullname" placeholder="Enter your name" required onfocus="setfocus(this)" >
+    <label for="nEmail" >Email</label>
+    <input type="email" id="nEmail" placeholder="Enter your email" required onfocus="setfocus(this)"  >
+    <label for="nPassword" >password</label>
+    <input type="password" id="nPassword" placeholder="Enter your password" required onfocus="setfocus(this)">
+    <label for="selectCity"required >City</label>
+    <select name="city" id="selectCity">
+        <option value="cairo">cairo</option>
+        <option value="hamburg">Hamburg</option>
+        <option value="alex">Alex</option>
+    </select>
+    <input type="checkbox"id="accept" required>
+    <label  for="accept">I accept the terms and conditions</label>
+    <button name="registration">register</button>
+    
+    </form>
+    
+
+
+
+<script src="lab5.js"></script>
+
+</body>
+</html>

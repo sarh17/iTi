@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Selectors Exercise</title>
+        <link href="select.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Course</h1>
+        </header>
+        <section class="section1">
+            <div class="para1">
+                <p class="red">Hello Ahmed</p>
+            </div>
+            <div class="para2">
+                <p class="pink">Hello Ibrahim</p>
+            </div>
+            <div class="para3">
+                <p class="orange">Hello Habiba</p>
+            </div>
+        </section>
+        <section class="section2">
+            <a href="http://www.google.com">website</a>
+            <a href="http://www.ieee.org">website</a>
+            <a href="https://www.facebook.com">website</a>
+        </section>
+        <section class="section3">
+            <figure>
+                <img src="cappuchinno.png" alt="" width="100" height="100" />
+                <figcaption>Fig.1 - Coffee</figcaption>
+            </figure>
+            <figure>
+                <img src="Pepsi.png" alt="" width="100" height="100" />
+                <figcaption>Fig.2 - Pepsi</figcaption>
+            </figure>
+            <figure>
+                <img src="coffee2.png" alt="" width="100" height="100" />
+                <figcaption>Fig.3 - Lemon Juice</figcaption>
+            </figure>
+            <figure>
+                <img src="tea.png" alt="" width="100" height="100" />
+                <figcaption>Fig.4 - Tea</figcaption>
+            </figure>
+        </section>
+        <section class="section4">
+            <table>
+                <tr class="head-row">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+                <tr class="row1">
+                    <td class="col-name my-name">Ahmed</td>
+                    <td class="col-email">ahmed@gmail.com</td>
+                    <td class="col-age">19</td>
+                </tr>
+                <tr class="row2">
+                    <td class="col-name your-name">Islam</td>
+                    <td class="col-email">islam@gmail.com</td>
+                    <td class="col-age">17</td>
+                </tr>
+                <tr class="row3">
+                    <td class="col-name">Amany</td>
+                    <td class="col-email">amany@gmail.com</td>
+                    <td class="col-age">21</td>
+                </tr>
+            </table>
+        </section>
+        <section class="section5">
+            <ul>
+                <li class="mission1">Bring Milk</li>
+                <li class="mission2">Buy Bike</li>
+                <li class="mission3">Learn JQuery</li>
+                <li class="mission4">
+                    <ol>
+                        <li>mini-task1</li>
+                        <li>mini-task2</li>
+                        <li>mini-task3</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <p> copy right reserved</p>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(".section1")
+                .children()
+                .each(function () {
+                    $(this)
+                        .children()
+                        .each(function () {
+                            $(this).css("color", $(this).attr("class"));
+                        });
+                    $(this).css("background", $(this).attr("class"));
+                });
+
+            $(".section2 a").each(function () {
+                if ($(this).attr("href").includes("http://www.google.com")) this.textContent = "GOOGLE";
+                if ($(this).attr("href").endsWith("org")) this.textContent = "IEEE";
+                if ($(this).attr("href").startsWith("https")) this.textContent = "Facebook";
+                if ($(this).attr("href").startsWith("https")) this.append(" Official Website");
+            });
+
+            $(".section3 :nth-child(3) figcaption").text("fig.3 - Orange Juice");
+            $(".section3 :nth-child(3) img").attr("src", "img/orange.png");
+
+            $(".section4 .my-name").attr("style", "color:blue");
+            $(".section4 td:odd").css("background-color", "pink");
+            $(".section4 tr:last td:nth-child(2)").css("font-weight", "bold");
+            $(".section5 ul > li:nth-child(2)")
+                .attr("style", "font-style: italic")
+                .next()
+                .attr("style", "color:red");
+        </script>
+    </body>
+</html>

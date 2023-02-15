@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+        <div class="container" >
+            <div class="navbar-brand " href="#" >Blogen</div>
+            
+            <div class="collapse navbar-collapse" id="navList">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">DashBoard</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Users</a>
+                    </li> 
+                </ul>
+                <ul class="navbar-nav ml-auto " >
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome Brad
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">log out</a>
+                  </li> 
+                </ul>
+             </div>
+           
+        </nav>
+        <header class="bg-info"style="height:4.5rem">
+          <div class="container h-5rem text-white d-flex ">
+            <h1 class="mt-2"><ion-icon name="settings-sharp" ></ion-icon> DashBoard</h1>
+            </div>
+          </header>
+           
+          <div class="container text-center p-4 mx-auto">
+            <div class="row ">
+                <button class="col btn btn-primary fs-5 ">
+                    <ion-icon name="add-sharp"></ion-icon> <a href="./boot2.html" class="text-decoration-none text-light"> Add Post</a>
+                </button>
+                <button class="col offset-1 btn btn-success text-light fs-5">
+                    <ion-icon name="add-sharp"></ion-icon><a href="#" class="text-decoration-none text-light"> Add Category</a>
+                </button>
+                <button class="col offset-1 btn btn-warning text-light fs-5">
+                    <ion-icon name="add-sharp"></ion-icon><a href="#" class="text-decoration-none text-light" target="_blank"> Add User</a>
+                </button>
+            </div>
+        </div>
+
+<div class="container mt-4">
+    <div class="bg-light p-3 fs-3 border">
+       Latest Posts
+    </div>
+          <table class="table table-striped p-2 border">
+            <thead class="bg-dark text-light text-start">
+                <th class="p-3">#</th>
+                <th class="p-3">Title</th>
+                <th class="p-3">Category</th>
+                <th class="p-3">Date</th>
+                <th class="p-3">More</th>
+            </thead>
+            <tbody>
+                <tr class="text-start">
+                    <td class="p-3">1</td>
+                    <td class="p-3">Post One</td>
+                    <td class="p-3">Web Development</td>
+                    <td class="p-3">May 10 2018</td>
+                    <td class="p-3">
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr class="text-start">
+                    <td class="p-3">2</td>
+                    <td class="p-3">Post Two</td>
+                    <td class="p-3">Tech Gadgets</td>
+                    <td class="p-3">May 11 2018</td>
+                    <td>
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr class="text-start">
+                    <td class="p-3">3</td>
+                    <td class="p-3">Post Three</td>
+                    <td class="p-3">Web Development</td>
+                    <td class="p-3">May 13 2018</td>
+                    <td class="p-3">
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr class="text-start">
+                    <td class="p-3">4</td>
+                    <td class="p-3">Post Four</td>
+                    <td class="p-3">Business</td>
+                    <td class="p-3">May 15 2018</td>
+                    <td class="p-3">
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr class="text-start">
+                    <td class="p-3">5</td>
+                    <td class="p-3">Post Five</td>
+                    <td class="p-3">Web Development</td>
+                    <td class="p-3">May 17 2018</td>
+                    <td class="p-3">
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr class="text-start">
+                    <td class="p-3">6</td>
+                    <td class="p-3">Post Six</td>
+                    <td class="p-3">Health & Wellness</td>
+                    <td class="p-3">May 20 2018</td>
+                    <td class="p-3">
+                        <button class="btn btn-secondary">
+                            <i class="bi bi-chevron-double-right"></i> Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class=" text-light bg-dark text-center p-5 mt-5">
+        Copyright &copy 2022 Blogen
+    </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+</body>
+</html>
