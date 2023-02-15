@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,4 +45,52 @@ function Failed(msg){
 }    
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJLQdul-88M-n-KXaDx4_8F6TJdqQwrvA&v=weekly"
+        async></script>
+</head>
+<body>
+    <button onclick="showHere()">Click To See The Map</button>
+    <br><br>
+    <div id="map" style="width: 100%;height:70vh;border: 3px rgb(0, 0, 0) solid;"></div>
+    <script >
+    var position ;
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(Connected,Failed)
+}
+else{
+    alert("Failed")
+}
+function showHere(){
+    var options = {
+        center: new google.maps.LatLng(position.latitude,position.longitude),
+        zoom:20
+    }
+    var test = new google.maps.Map(document.getElementById("map"),options)
+}
+function gotoMaps(){
+    console.log(position)
+    var url = `https://maps.google.com/maps?q=${position.latitude},+${position.longitude}`
+    location.replace(url)
+}
+function Connected(point){
+    // console.log(point)
+    position ={
+        latitude:point.coords.latitude,
+        longitude:point.coords.longitude,
+    } 
+}
+function Failed(msg){
+    console.log(msg)
+}    
+    </script>
+</body>
+>>>>>>> 9b3aa67b9e971d0212fbdffdb52f727fde4f5221
 </html>

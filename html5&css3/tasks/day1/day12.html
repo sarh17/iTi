@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 </html>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,3 +53,59 @@
 </html>
 
 
+=======
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="insertNum"id= "insertNum">Insert num:</label>
+    <input type="number" id="getNum">
+    <br>
+    <br>
+    <label for="pickColor" id="insertColor"> Choose a Color:</label>
+    <input type="color" id="insertColor">
+    <br>
+    <br>
+    <button type="button" id="btnAdd" >Add</button>
+    <br>
+    <br>
+    <canvas id="canvas" style="
+        border: 4px black solid;
+    "></canvas>
+<script>
+     let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    canvas.width = "1200"
+    canvas.height = "600"
+    var pick = document.getElementById("insertColor");
+    var btnAdd =document.getElementById("btnAdd");
+    var getNum = document.getElementById("getNum")
+    btnAdd.addEventListener("click",function(){
+        ctx.beginPath();
+        var y;
+        var x=0;
+        // ctx.fillStyle= getNum.value;
+        ctx.rect(0,600,50,600-parseInt(getNum.value));
+        ctx.stroke();
+        ctx.fillStyle = pick.value;
+        ctx.strokeStyle = pick.value;
+        ctx.closePath();
+
+
+    })
+    
+
+
+</script>
+</body>
+</html>
+
+
+>>>>>>> 9b3aa67b9e971d0212fbdffdb52f727fde4f5221
